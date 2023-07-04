@@ -1,0 +1,49 @@
+body {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: sans-serif;
+}
+
+.container {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	/* background-color: red; */
+}
+
+.ring {
+	/*fit full size of container*/
+	width: 100%;
+	height: 100%;
+	/* background-color: green; */
+	border-left: 4px solid #262626; /*only one border to make spin open*/
+	border-radius: 50%; /*circle*/
+	animation: rotate 1s linear infinite;
+}
+
+.text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*fit full size of container*/
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 200px; /*center text vertically*/
+	font-size: 22px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/*rotate in full circle*/
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
