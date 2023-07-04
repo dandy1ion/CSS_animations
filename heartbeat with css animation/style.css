@@ -1,0 +1,67 @@
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Lato", sans-serif;
+	background-color: #262626;
+}
+
+.heart {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	background-color: #ff3838;
+	transform: rotate(
+		45deg
+	); /*creat diamond, before and after pseudo-elements rotate with it*/
+	animation: heartbeat 1.4s linear 1; /*infinite*/
+}
+
+.heart:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background-color: white;*/
+	background-color: #ff3838;
+	transform: translateY(-50%); /*move to top, half the height of the div*/
+	border-radius: 50%; /*rounded*/
+}
+
+.heart:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background-color: green;*/
+	background-color: #ff3838;
+	transform: translateX(-50%); /*move to left, half the width of the div*/
+	border-radius: 50%; /*rounded*/
+}
+
+/*keep heart rotated 45deg, start at regular scale then enlarge slightly, decrease slightly, enlarge slightly then return to regular scale*/
+@keyframes heartbeat {
+	0% {
+		transform: rotate(45deg) scale(1);
+	}
+	25% {
+		transform: rotate(45deg) scale(1);
+	}
+	30% {
+		transform: rotate(45deg) scale(1.4);
+	}
+	50% {
+		transform: rotate(45deg) scale(1.2);
+	}
+	70% {
+		transform: rotate(45deg) scale(1.4);
+	}
+	100% {
+		transform: rotate(45deg) scale(1);
+	}
+}

@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One");
+
+body {
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	position: relative;
+	width: 250px;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	color: #250e74;
+	border: 4px solid #250e74;
+	font-size: 24px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	transition: all 0.5s;
+	overflow: hidden;
+}
+
+a:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-top: 40px solid #250e74; /*start red*/
+	border-bottom: 40px solid #250e74; /*start green*/
+	border-right: 40px solid transparent; /*start yellow*/
+	transition: all 0.5s;
+	z-index: -1;
+	transform: translateX(
+		-100%
+	); /*shifts sudo-element all the way out of the box to the left*/
+}
+
+a:hover:before {
+	transform: translateX(0%); /*bring sudo-element over the link*/
+}
+
+a:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-top: 40px solid #250e74;
+	border-bottom: 40px solid #250e74;
+	border-left: 40px solid transparent; /*transparent portion on the left*/
+	transition: all 0.5s;
+	z-index: -1;
+	transform: translateX(
+		100%
+	); /*shift sudo-element all the way out of the box to the right*/
+}
+
+a:hover:after {
+	transform: translateX(0%); /*bring sudo-element over the link*/
+}
+
+a:hover {
+	color: white;
+}

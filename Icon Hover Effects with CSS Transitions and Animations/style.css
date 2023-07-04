@@ -1,0 +1,90 @@
+body {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: sans-serif;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	display: flex;
+}
+
+ul li {
+	list-style-type: none;
+	width: 120px;
+	height: 120px;
+	margin: 0 20px; /*space between icons*/
+	border: 2px solid #0a3d62;
+	border-radius: 50%; /*circle*/
+	transition: all 0.5s;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+ul li i {
+	font-size: 48px; /*icon sizing*/
+	color: #0a3d62;
+	transition: 0.5s;
+}
+
+ul li:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*starts at full size of icon border*/
+	width: 100%;
+	height: 100%;
+	background-color: #0a3d62;
+	border-radius: 50%; /*circle*/
+	transition: all 0.5s;
+	opacity: 0; /*transparent*/
+	z-index: -1; /*behind icon*/
+}
+
+ul li:hover:before {
+	opacity: 1; /*visable*/
+	transform: scale(0.8); /*shrink size slightly*/
+}
+
+ul li:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*starts at full size of icon border*/
+	width: 100%;
+	height: 100%;
+	background-color: transparent; /*just want border to show*/
+	border-radius: 50%; /*circle*/
+	border: 2px dashed #2e86de; /*dashed line*/
+	transition: all 0.5s;
+	opacity: 0; /*transparent*/
+	z-index: -1; /*behind icon*/
+	box-sizing: border-box;
+}
+
+ul li:hover:after {
+	opacity: 1; /*visable*/
+	animation: rotating 10s linear infinite; /*use rotating animation*/
+}
+
+/*decrease size slightly & rotate in a full circle*/
+@keyframes rotating {
+	0% {
+		transform: scale(0.92) rotate(0deg);
+	}
+	100% {
+		transform: scale(0.92) rotate(360deg);
+	}
+}
+
+ul li:hover i {
+	color: white; /*icon color changes on hover to be seen*/
+}
