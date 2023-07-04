@@ -1,0 +1,29 @@
+body {
+	margin: 0;
+}
+
+div {
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	animation-name: moving;
+	animation-duration: 5s;
+	animation-fill-mode: both;
+	/*animation-iteration-count:tells browser how many times the animation should be repeated (accepts numerical values)*/
+	animation-iteration-count: 1; /*infinite = plays forever*/
+	animation-timing-function: linear; /*ease, linear, ease-in, ease-in-out*/
+}
+
+@keyframes moving {
+	0% {
+		transform: translateX(500px);
+	}
+
+	50% {
+		transform: translateX(1000px);
+	}
+
+	100% {
+		transform: translate(1000px, 500px);
+	}
+}

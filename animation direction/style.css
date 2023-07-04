@@ -1,0 +1,28 @@
+body {
+	margin: 0;
+}
+
+div {
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	animation-name: moving;
+	animation-duration: 3s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse; /*normal = default, reverse = starts at the end and ends at the begining, alternate = begin to end, end to begin, etc. till iteration ends, alternate-reverse= end to begin, begin to end, etc. till iteration ends*/
+}
+
+@keyframes moving {
+	0% {
+		transform: translateX(500px);
+	}
+
+	50% {
+		transform: translateX(1000px);
+	}
+
+	100% {
+		transform: translate(1000px, 500px);
+	}
+}

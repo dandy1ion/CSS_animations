@@ -1,0 +1,18 @@
+.banner {
+	height: 100vh;
+	background: url(bg.png);
+	background-position: 0 0; /*image position top left*/
+	animation: animated-pattern 15s linear infinite;
+}
+
+@keyframes animated-pattern {
+	from {
+		background-position: 0 0;
+	}
+
+	/*with just 0 & 600px moves virtaclly(pattern is 600px)*/
+	/*with just 800px & 0 moves horizontally(pattern is 800px wide)*/
+	to {
+		background-position: 800px 600px; /*moves diagnolly*/
+	}
+}

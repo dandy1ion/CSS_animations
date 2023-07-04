@@ -1,0 +1,120 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+
+body {
+	background-color: #333;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Raleway", Arial, sans-serif;
+}
+ul {
+	padding: 0;
+	display: flex;
+}
+
+ul li {
+	list-style: none;
+	padding: 10px 40px;
+}
+
+ul li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 24px;
+	color: white;
+	position: relative;
+	padding: 5px;
+}
+
+a:hover {
+	color: #ff0;
+}
+
+/*top left corner*/
+span:first-child:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 8px;
+	height: 8px;
+	background-color: transparent; /*not visable, only want to see border*/
+	border-top: 2px solid #ff0;
+	border-left: 2px solid #ff0;
+	transition: 0.2s;
+	opacity: 0; /*not visable*/
+}
+
+/*top right corner*/
+span:first-child:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 8px;
+	height: 8px;
+	background-color: transparent; /*not visable, only want to see border*/
+	border-top: 2px solid #ff0;
+	border-right: 2px solid #ff0;
+	transition: 0.2s;
+	opacity: 0; /*not visable*/
+}
+
+/*bottom left corner*/
+span:last-child:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 8px;
+	height: 8px;
+	background-color: transparent; /*not visable, only want to see border*/
+	border-bottom: 2px solid #ff0;
+	border-left: 2px solid #ff0;
+	transition: 0.2s;
+	opacity: 0; /*not visable*/
+}
+
+/*bottom right corner*/
+span:last-child:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 8px;
+	height: 8px;
+	background-color: transparent; /*not visable, only want to see border*/
+	border-bottom: 2px solid #ff0;
+	border-right: 2px solid #ff0;
+	transition: 0.2s;
+	opacity: 0; /*not visable*/
+}
+
+a:hover span:first-child:before {
+	/*moves border out*/
+	top: -10px;
+	left: -10px;
+	opacity: 1; /*visable*/
+}
+
+a:hover span:first-child:after {
+	/*moves border out*/
+	top: -10px;
+	right: -10px;
+	opacity: 1; /*visable*/
+}
+
+a:hover span:last-child:before {
+	/*moves border out*/
+	bottom: -10px;
+	left: -10px;
+	opacity: 1; /*visable*/
+}
+
+a:hover span:last-child:after {
+	/*moves border out*/
+	bottom: -10px;
+	right: -10px;
+	opacity: 1; /*visable*/
+}

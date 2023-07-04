@@ -1,0 +1,50 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #c8d6e5;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*size & position of container div*/
+.main {
+	position: relative;
+	width: 800px;
+}
+
+/*sizing, styling, and position of both h1*/
+h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 220px;
+	text-transform: uppercase;
+}
+
+h1:nth-child(2) {
+	color: white;
+	transition: 0.5s;
+	clip-path: polygon(
+		0 0,
+		100% 0,
+		100% 0,
+		0% 100%
+	); /*only show top left corner, triangle shape*/
+	background-color: #c8d6e5; /*matches background color of body to hide nth-child(1) behind nth-child(1)*/
+}
+
+h1:nth-child(2):hover {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /*full size*/
+}
+
+/*when hover over black(nth-child(1)), make changes to white(nth-child(2))*/
+h1:nth-child(1):hover ~ h1 {
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /*shrink till disapear*/
+}

@@ -1,0 +1,22 @@
+body {
+	margin: 0;
+}
+
+div {
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	animation-name: moving;
+	animation-duration: 3s;
+}
+
+/*animation rule*/
+@keyframes moving {
+	from {
+		transform: translateX(0);
+	} /*original position*/
+
+	to {
+		transform: translateX(1000px);
+	} /*move to right 1000px*/
+}
