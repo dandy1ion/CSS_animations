@@ -1,0 +1,80 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #ee5253;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.loader {
+	width: 150px;
+	height: 150px;
+	position: relative;
+}
+
+span {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-color: white;
+	border-radius: 4px; /*slightly rounded corners*/
+	animation: chase 3s linear infinite; /*2s*/
+}
+
+span:nth-child(2) {
+	animation-delay: 0.7s;
+}
+
+span:nth-child(3) {
+	animation-delay: 1.4s;
+}
+
+@keyframes chase {
+	/*start at top, left corner of container*/
+	0% {
+		top: 0;
+		left: 0;
+	}
+	/*move to the right by 50% of container width*/
+	12.5% {
+		top: 0;
+		left: 50%;
+	}
+	/*stay same*/
+	25% {
+		top: 0;
+		left: 50%;
+	}
+	/*move to the bottom by 50% of container height*/
+	37.5% {
+		top: 50%;
+		left: 50%;
+	}
+	/*stay same*/
+	50% {
+		top: 50%;
+		left: 50%;
+	}
+	/*move to bottom left corner of container*/
+	62.5% {
+		top: 50%;
+		left: 0;
+	}
+	/*stay same*/
+	75% {
+		top: 50%;
+		left: 0;
+	}
+	/*move to top, left corner of container again*/
+	87.5% {
+		top: 0;
+		left: 0;
+	}
+	/*stay same*/
+	100% {
+		top: 0;
+		left: 0;
+	}
+}

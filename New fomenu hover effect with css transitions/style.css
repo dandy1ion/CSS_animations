@@ -1,0 +1,81 @@
+body {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: sans-serif;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	list-style-type: none;
+}
+
+ul li a {
+	color: #272727;
+	font-size: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 5px 10px;
+	margin: 0px 10px;
+	position: relative;
+	transition: all 0.5s;
+}
+
+a:hover {
+	background-color: #e91e63;
+	color: white;
+}
+
+a:before {
+	content: "";
+	position: absolute;
+	/*border at bottom left corner*/
+	/* bottom: 0;
+  left:0;*/
+	/*push border in to link*/
+	bottom: 12px;
+	left: 12px;
+	width: 12px;
+	height: 12px;
+	/* background-color: blue; */
+	border: 3px solid #e91e63;
+	border-width: 0 0 3px 3px; /*top, right, bottom, left*/
+	opacity: 0; /*transparent*/
+	transition: all 0.3s;
+}
+
+a:hover:before {
+	opacity: 1; /*visable*/
+	/*bring border out from link*/
+	bottom: -8px;
+	left: -8px;
+}
+
+a:after {
+	content: "";
+	position: absolute;
+	/*border at top right corner*/
+	/* top: 0;
+  right:0;*/
+	/*push border in to link*/
+	top: 12px;
+	right: 12px;
+	width: 12px;
+	height: 12px;
+	/* background-color: blue; */
+	border: 3px solid #e91e63;
+	border-width: 3px 3px 0 0; /*top, right, bottom, left*/
+	opacity: 0; /*transparent*/
+	transition: all 0.3s;
+}
+
+a:hover:after {
+	opacity: 1;
+	/*bring border out from link*/
+	top: -8px;
+	right: -8px;
+}

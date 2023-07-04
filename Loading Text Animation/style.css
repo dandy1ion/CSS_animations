@@ -1,0 +1,76 @@
+body {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: sans-serif;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+ul li {
+	list-style-type: none;
+	font-size: 80px;
+	letter-spacing: 20px;
+	animation: loading 5s linear infinite; /*3s*/
+}
+
+/*start with just 0% red and 100% blue*/
+@keyframes loading {
+	0% {
+		color: red;
+		transform: translateX(-50px); /*start to the left of original position*/
+		letter-spacing: 20px;
+		opacity: 0; /*transparent*/
+	}
+
+	10% {
+		opacity: 1; /*visable*/
+	}
+
+	50% {
+		letter-spacing: -20px; /*letters come closer together*/
+		opacity: 1; /*visable*/
+	}
+
+	100% {
+		color: blue;
+		transform: translateX(50px); /*move to the right*/
+		letter-spacing: 20px;
+		opacity: 0; /*transparent*/
+	}
+}
+
+/*have each letter animated one after the other*/
+ul li:nth-child(1) {
+	animation-delay: 0s;
+}
+
+ul li:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+ul li:nth-child(3) {
+	animation-delay: 0.4s;
+}
+
+ul li:nth-child(4) {
+	animation-delay: 0.6s;
+}
+
+ul li:nth-child(5) {
+	animation-delay: 0.8s;
+}
+
+ul li:nth-child(6) {
+	animation-delay: 1s;
+}
+
+ul li:nth-child(7) {
+	animation-delay: 1.2s;
+}

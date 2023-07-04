@@ -1,0 +1,88 @@
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+}
+
+/*main div containing everything*/
+.card {
+	position: relative;
+	width: 335px;
+	height: 500px;
+}
+
+/*image details*/
+.img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s;
+	clip-path: circle(70.7% at 50% 50%); /*show full size of the element*/
+}
+
+img {
+	width: 100%;
+}
+
+/*on hover change img to a circle of 18.2% at this position*/
+.card:hover .img {
+	clip-path: circle(18.2% at 50% 38%);
+}
+
+/*content details*/
+.content {
+	position: absolute;
+	left: 0;
+	bottom: 50px;
+	text-align: center;
+}
+
+h2 {
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+p {
+	margin-bottom: 25px;
+	font-size: 16px;
+	text-transform: capitalize;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	background-color: black;
+	border: 2px solid black;
+	color: white;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	transition: all 0.5s;
+}
+
+a:hover {
+	background-color: white;
+	color: black;
+}
+
+h2,
+p,
+a {
+	opacity: 0; /*transparent*/
+	transition: 0.3s;
+	transform: translateY(20px); /*move from bottom*/
+}
+
+.card:hover h2,
+.card:hover p,
+.card:hover a {
+	opacity: 1; /*visable*/
+	transform: translateY(0); /*original position*/
+	transition-delay: 0.5s;
+}

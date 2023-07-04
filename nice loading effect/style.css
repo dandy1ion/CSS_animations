@@ -1,0 +1,65 @@
+body {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: #212121;
+}
+
+.loading {
+	display: flex; /*to display divs next to eachother*/
+}
+
+/*lines*/
+.obj {
+	width: 6px;
+	height: 40px;
+	background-color: white;
+	margin: 0 3px; /*space between lines*/
+	border-radius: 10px; /*rounded corners*/
+	animation: loading 1s linear infinite;
+	/* transform-origin: bottom; */ /*without this then central origin point*/
+}
+
+/*start at 0 & grow up till full height then decrease to 0 again*/
+@keyframes loading {
+	0% {
+		transform: scaleY(0);
+	}
+	50% {
+		transform: scaleY(1);
+	}
+	100% {
+		transform: scaleY(0);
+	}
+}
+
+/*each line delayed for wave effect*/
+.obj:nth-child(2) {
+	animation-delay: 0.1s;
+}
+
+.obj:nth-child(3) {
+	animation-delay: 0.2s;
+}
+
+.obj:nth-child(4) {
+	animation-delay: 0.3s;
+}
+
+.obj:nth-child(5) {
+	animation-delay: 0.4s;
+}
+
+.obj:nth-child(6) {
+	animation-delay: 0.5s;
+}
+
+.obj:nth-child(7) {
+	animation-delay: 0.6s;
+}
+
+.obj:nth-child(8) {
+	animation-delay: 0.7s;
+}

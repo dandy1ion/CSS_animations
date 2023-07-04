@@ -1,0 +1,89 @@
+body {
+	height: 100vh;
+	font-family: sans-serif;
+	background-color: #222d3e;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.loader {
+	width: 200px;
+	height: 200px;
+	position: relative;
+}
+
+.outer {
+	position: absolute;
+	/*200px(same size as loader container*/
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/*creating oposite borders*/
+	border-left: 5px solid #eb4d4b;
+	border-right: 5px solid #eb4d4b;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-radius: 50%; /*circle*/
+	animation: rotate 1.5s linear infinite; /*1s*/
+	/* animation-delay: 3s; */
+}
+
+.middle {
+	position: absolute;
+	/*140px(30px less on each side)*/
+	top: 30px;
+	left: 30px;
+	right: 30px;
+	bottom: 30px;
+	/*creating oposite borders*/
+	border-left: 5px solid #218c74;
+	border-right: 5px solid #218c74;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-radius: 50%; /*circle*/
+	animation: rotate 2s linear infinite reverse; /*1s*/ /*remove reverse to get all spinning same direction*/
+	/* animation-delay: 2s; */
+}
+
+.inner {
+	position: absolute;
+	/*80px(60px less on each side)*/
+	top: 60px;
+	left: 60px;
+	right: 60px;
+	bottom: 60px;
+	/*creating oposite borders*/
+	border-left: 5px solid #ccae62;
+	border-right: 5px solid #ccae62;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-radius: 50%; /*circle*/
+	animation: rotate 3s linear infinite; /*1s*/
+	/* animation-delay: 1s; */
+}
+
+.dot {
+	position: absolute;
+	top: 90px;
+	left: 90px;
+	right: 90px;
+	bottom: 90px;
+	background-color: white;
+	border-radius: 50%; /*circle*/
+}
+
+/*full circle rotation*/
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
