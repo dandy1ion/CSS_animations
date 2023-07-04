@@ -1,0 +1,83 @@
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #2c3e50;
+}
+
+.cradle {
+	display: flex;
+	border-top: 10px solid white;
+}
+
+/*bars with circles at end*/
+.cradle span {
+	display: block;
+	width: 3px;
+	height: 300px;
+	background-color: white;
+	margin: 0 29px;
+	position: relative;
+	transform-origin: top; /*swing from top, instead of center*/
+}
+
+/*circles*/
+.cradle span:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: white;
+	transform: translateX(-50%); /*shifted to left to center*/
+}
+
+.cradle span:first-child {
+	animation: left-arm 2s ease-in infinite;
+}
+
+.cradle span:last-child {
+	animation: right-arm 2s ease-in infinite 1s;
+}
+
+/*make 2 go at a time*/
+/* .cradle span:nth-child(2) {
+	animation: left-arm 2s ease-in infinite;
+}
+
+.cradle span:nth-child(4) {
+	animation: right-arm 2s ease-in infinite 1s;
+} */
+
+@keyframes left-arm {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(60deg); /*rotate to left(clockwise)*/
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	} /*stay in this position till right-arm finishes rotation*/
+}
+
+@keyframes right-arm {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(-60deg); /*rotate to right(counter-clockwise)*/
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	} /*stay in this position till left-arm finishes rotation*/
+}
